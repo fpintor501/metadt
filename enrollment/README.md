@@ -6,46 +6,61 @@
 
 3. Create a user metadata with password metadata that has access to the schema metadata in MYSQL.
 
-4. Download the code from 
+4. Create a new directory and download the project code from GITHUB like this
 
-4. To review code using eclipse IDE, import the "enrollment" project using maven's pom.xml.
+	>git clone https://github.com/fpintor501/metadt.git
 
-5. Set the java compiler to version 11 in eclipse for this project.
+5. To review code using eclipse IDE, import the "enrollment" project using maven's pom.xml.
 
-6. If you use another user or schema that is the same in MYSQL, change the datasource attributes in "src/main/resources/application.properties"
+6. Set the java compiler to version 11 in eclipse for this project.
 
-7. Build the project with maven using "mvn install".
+7. If you use another user or schema that is the same in MYSQL, change the datasource attributes in "src/main/resources/application.properties"
+
+8. Build the project with maven using "mvn install".
 
 
 To Run project as an executable jar: 
 
+9.  Open a window in the root directory of the enrollment project
 
-8. Run the project directly using the jar target/enrollment-0.0.1-SNAPSHOT.jar generated in target with Java v11 from the command line:
+10. Run the project directly using the jar target/enrollment-0.0.1-SNAPSHOT.jar generated in target with Java v11 from the command line:
 
 	>java -jar enrollment-0.0.1-SNAPSHOT.jar
 
-9. The Spring Boot console appears and the system eventually boots up. A message appears to print the splash reports:
+11. The Spring Boot console appears and the system eventually boots up. A message appears to print the splash reports:
 
 "Print Splash Reports(Y)? "
 
-10. Enter Y and all the test records for Students, Courses and Enrollment will appear depending on the records that are in the DB.
+12. Enter Y and all the test records for Students, Courses and Enrollment will appear depending on the records that are in the DB.
 
 To Run project as a docker container:
 
-8. From the  
+ 9. Open a window in the root directory of the enrollment project  
+
+10. Create a new docker container that includes the enrollment executable jar using a azul/zulu OpenJDK over the Alpine LINUX distribution from the command line:
+
+	>docker build -t metadt/enrollment:1.0-SNAPSHOT .
+
+11. Run the docker container just created from the command line using:\
+
+	>docker run -p 8088:8088 metadt/enrollment:1.0-SNAPSHOT .
+
+12. The Spring Boot console appears and the system eventually boots up. 
+
+To test the functionality of the enrollment application:
+
+13. Please use a tool that is enabled to send and process HTTP based requests and responses, like Postman or Imsomnia.
+
+14. Use the following API chart to test the requested functionality
 
 
-8. Run the project directly using the jar target/enrollment-0.0.1-SNAPSHOT.jar generated in target with Java v11 from the command line:
 
-	>java -jar enrollment-0.0.1-SNAPSHOT.jar
 
-9. The Spring Boot console appears and the system eventually boots up. A message appears to print the splash reports:
 
-"Print Splash Reports(Y)? "
 
-10. Enter Y and all the test records for Students, Courses and Enrollment will appear depending on the records that are in the DB.
 
-A CRUD REST API for the TRANSACTIONS table can also be accessed using a browser or Postman
+CRUD REST API for the TRANSACTIONS table can also be a
+ccessed using a browser or Postman
 
 ejemplos
 
