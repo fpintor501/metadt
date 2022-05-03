@@ -8,6 +8,7 @@ import com.metadt.enrollment.service.CourseService;
 import com.metadt.enrollment.service.StudentService;
 import com.metadt.enrollment.service.EnrollmentService;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -34,7 +35,7 @@ public class EnrollmentsApplication {
 				studentService.runSplashReport();
 				enrollmentService.runSplashReport();
 			}
-		}
+		} catch(NoSuchElementException e) {System.out.println("Cannot INPUT in console for current execution context.");} 
 		
 	}
 
